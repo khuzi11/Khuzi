@@ -12,7 +12,7 @@ conn.commit()
 
 
 # Get user's name
-name = st.text_input("Enter your name:")
+name = st.text_input("Khuzaima Nasir:")
 
 # Sidebar menu
 st.sidebar.title("Menu")
