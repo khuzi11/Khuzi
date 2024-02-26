@@ -67,5 +67,5 @@ def main():
     else:
         st.info("No contacts in the address book.")
 
-if _name_ == "_main_":
+if _name_ == "_main_"
     main()
