@@ -18,8 +18,8 @@ name = st.text_input("Enter your name:")
 st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
 
-if selected_page == "Address Book":
-    st.title("Home")
+if selected_page == "Home":
+    st.title("Address Book")
     # Add address book functionality here
 elif selected_page == "About Us":
     st.title("About Us")
