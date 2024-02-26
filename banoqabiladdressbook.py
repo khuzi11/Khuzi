@@ -17,10 +17,10 @@ selected_page = st.sidebar.radio("", ["Home", "About Us", "Contact"])
 
 if selected_page == "Home":
     # Add address book functionality here
-elif selected_page == "About Us":
+  elif selected_page == "About Us":
     st.title("About Us")
     st.write(f"This address book application was created by {name}.")
-elif selected_page == "Contact":
+  elif selected_page == "Contact":
     st.title("03188126496")
     st.write("For support, please email khuzaiman468@gmail.com.")
 
