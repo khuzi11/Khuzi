@@ -11,9 +11,6 @@ c.execute('''CREATE TABLE IF NOT EXISTS contacts
 conn.commit()
 
 
-# Get user's name
-name = st.text_input("Khuzaima Nasir:")
-
 # Sidebar menu
 st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Home", "About Us", "Contact"])
