@@ -16,7 +16,7 @@ name = st.text_input("Khuzaima Nasir:")
 
 # Sidebar menu
 st.sidebar.title("Menu")
-selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
+selected_page = st.sidebar.radio("", ["Home", "About Us", "Contact"])
 
 if selected_page == "Home":
     st.title("Address Book")
