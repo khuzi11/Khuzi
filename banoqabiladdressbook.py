@@ -16,7 +16,7 @@ st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
 
 # Display logo
-st.image("logo.png", width=200)
+st.image("https://images.app.goo.gl/p88uB4s9ewFyK7oj7", width=200)
 
 if selected_page == "Address Book":
     st.title("Address Book")
