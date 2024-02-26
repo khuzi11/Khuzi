@@ -1,71 +1,56 @@
-import streamlit as st
-import sqlite3
+def add_contact(contacts, name, phone_number):
+    contacts[name] = phone_number
+    print("Contact added successfully!")
 
-# Create a connection to the SQLite database
-conn = sqlite3.connect('address_book.db')
-c = conn.cursor()
-
-# Create a table to store contacts if it doesn't exist
-c.execute('''CREATE TABLE IF NOT EXISTS contacts
-             (id INTEGER PRIMARY KEY, name TEXT, phone TEXT, email TEXT)''')
-conn.commit()
-
-# Function to add a contact to the database
-def add_contact(name, phone, email):
-    c.execute('''INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)''',
-              (name, phone, email))
-    conn.commit()
-
-# Function to delete a contact from the database
-def delete_contact(name):
-    c.execute('''DELETE FROM contacts WHERE name=?''', (name,))
-    conn.commit()
-
-# Function to search for a contact in the database
-def search_contact(name):
-    c.execute('''SELECT * FROM contacts WHERE name=?''', (name,))
-    return c.fetchone()
-
-# Function to display all contacts from the database
-def display_contacts():
-    c.execute('''SELECT * FROM contacts''')
-    return c.fetchall()
-
-# Main function
-def main():
-    st.title("Address Book")
-
-    st.sidebar.title("Add Contact")
-    name = st.sidebar.text_input("Name")
-    phone = st.sidebar.text_input("Phone")
-    email = st.sidebar.text_input("Email")
-
-    if st.sidebar.button("Add Contact"):
-        add_contact(name, phone, email)
-        st.sidebar.success("Contact added successfully.")
-
-    st.sidebar.title("Delete Contact")
-    delete_name = st.sidebar.text_input("Name to delete")
-    if st.sidebar.button("Delete Contact"):
-        delete_contact(delete_name)
-        st.sidebar.success("Contact deleted successfully.")
-
-    st.sidebar.title("Search Contact")
-    search_name = st.sidebar.text_input("Name to search")
-    if st.sidebar.button("Search Contact"):
-        contact = search_contact(search_name)
-        if contact:
-            st.write(f"Name: {contact[1]}, Phone: {contact[2]}, Email: {contact[3]}")
-        else:
-            st.error("Contact not found.")
-
-    st.header("All Contacts")
-    contacts = display_contacts()
-    if contacts:
-        for contact in contacts:
-            st.write(f"Name: {contact[1]}, Phone: {contact[2]}, Email: {contact[3]}")
+def search_contact(contacts, name):
+    if name in contacts:
+        print(f"Name: {name}, Phone Number: {contacts[name]}")
     else:
-        st.info("No contacts in the address book.")
+        print("Contact not found.")
 
-    if _name_ == "_main_":
-        main()
+def delete_contact(contacts, name):
+    if name in contacts:
+        del contacts[name]
+        print("Contact deleted successfully!")
+    else:
+        print("Contact not found.")
+
+def view_contacts(contacts):
+    if contacts:
+        print("Contacts:")
+        for name, phone_number in contacts.items():
+            print(f"Name: {name}, Phone Number: {phone_number}")
+    else:
+        print("No contacts found.")
+
+def main():
+    contacts = {}
+    while True:
+        print("\nAddress Book Menu:")
+        print("1. Add Contact")
+        print("2. Search Contact")
+        print("3. Delete Contact")
+        print("4. View Contacts")
+        print("5. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            name = input("Enter name: ")
+            phone_number = input("Enter phone number: ")
+            add_contact(contacts, name, phone_number)
+        elif choice == '2':
+            name = input("Enter name to search: ")
+            search_contact(contacts, name)
+        elif choice == '3':
+            name = input("Enter name to delete: ")
+            delete_contact(contacts, name)
+        elif choice == '4':
+            view_contacts(contacts)
+        elif choice == '5':
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
