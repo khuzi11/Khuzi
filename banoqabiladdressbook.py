@@ -16,7 +16,7 @@ st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
 
 # Display logo
-st.image("https://www.google.com/search?q=bano+qabil+2.0+logo+png&tbm=isch&ved=2ahUKEwj3td29uMmEAxUZWaQEHc7aD0EQ2-cCegQIABAA&oq=bano+qabil+2.0+logo+png&gs_lp=EgNpbWciF2Jhbm8gcWFiaWwgMi4wIGxvZ28gcG5nSN4uUOAFWIMscAV4AJABAJgBxgKgAegOqgEFMi03LjG4AQPIAQD4AQGKAgtnd3Mtd2l6LWltZ8ICBBAjGCeIBgE&sclient=img&ei=Xb7cZbeTA5mykdUPzrW_iAQ&bih=953&biw=1920#imgrc=4h1ST9VxIBBEMM, width=200)
+st.image("logo.png", width=200)
 
 if selected_page == "Address Book":
     st.title("Address Book")
