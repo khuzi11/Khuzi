@@ -16,6 +16,7 @@ st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Home", "About Us", "Contact"])
 
 if selected_page == "Home":
+  st.title("My Address Book")
     # Add address book functionality here
   elif selected_page == "About Us":
     st.title("About Us")
