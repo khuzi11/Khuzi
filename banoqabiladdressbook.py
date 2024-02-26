@@ -25,7 +25,7 @@ elif selected_page == "About Us":
     st.write(f"This address book application was created by {Khuzaima,Naufil<Huzaifa}.")
 elif selected_page == "Contact":
     st.title("03188126496")
-    st.write("For support, please email supportkhuzaiman468@.com.")
+    st.write("For support, khuzaiman468@.com.")
 
 # Get user's name
 name = st.text_input("Enter your name:")
