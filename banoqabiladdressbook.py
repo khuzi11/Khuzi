@@ -19,14 +19,14 @@ st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
 
 if selected_page == "Address Book":
-    st.title("Address Book")
+    st.title("Home")
     # Add address book functionality here
 elif selected_page == "About Us":
     st.title("About Us")
     st.write(f"This address book application was created by {name}.")
 elif selected_page == "Contact":
-    st.title("Contact")
-    st.write("For support, please email support@example.com.")
+    st.title("C03188126496")
+    st.write("For support, please email khuzaiman468@gmail.com.")
 
 
 # Function to add a contact to the database
