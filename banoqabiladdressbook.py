@@ -10,25 +10,6 @@ c.execute('''CREATE TABLE IF NOT EXISTS contacts
              (id INTEGER PRIMARY KEY, name TEXT, phone TEXT, email TEXT)''')
 conn.commit()
 
-
-# Sidebar menu
-st.sidebar.title("Menu")
-selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
-
-# Display logo
-st.image("logo.png", width=200)
-
-if selected_page == "Address Book":
-    st.title("Address Book")
-    # Add address book functionality here
-elif selected_page == "About Us":
-    st.title("About Us")
-    st.write(f"This address book application was created by {name}.")
-elif selected_page == "Contact":
-    st.title("Contact")
-    st.write("For support, please email support@example.com.")
-
-
 # Function to add a contact to the database
 def add_contact(name, phone, email):
     c.execute('''INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)''',
@@ -52,7 +33,7 @@ def display_contacts():
 
 # Main function
 def main():
-    st.title("My Address Book")
+    st.title("Address Book")
 
     st.sidebar.title("Add Contact")
     name = st.sidebar.text_input("Name")
@@ -86,5 +67,5 @@ def main():
     else:
         st.info("No contacts in the address book.")
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
