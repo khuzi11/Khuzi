@@ -10,9 +10,39 @@ c.execute('''CREATE TABLE IF NOT EXISTS contacts
              (id INTEGER PRIMARY KEY, name TEXT, phone TEXT, email TEXT)''')
 conn.commit()
 
+# Get user's name
+name = st.text_input("Enter your name:")
+
 # Sidebar menu
 st.sidebar.title("Menu")
 selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
+
+if selected_page == "Address Book":
+    st.title("Address Book")
+    # Add address book functionality here
+elif selected_page == "About Us":
+    st.title("About Us")
+    st.write(f"This address book application was created by {Khuzaima,Naufil<Huzaifa}.")
+elif selected_page == "Contact":
+    st.title("03188126496")
+    st.write("For support, please email supportkhuzaiman468@.com.")
+
+# Get user's name
+name = st.text_input("Enter your name:")
+
+# Sidebar menu
+st.sidebar.title("Menu")
+selected_page = st.sidebar.radio("", ["Address Book", "About Us", "Contact"])
+
+if selected_page == "Address Book":
+    st.title("Address Book")
+    # Add address book functionality here
+elif selected_page == "About Us":
+    st.title("About Us")
+    st.write(f"This address book application was created by {name}.")
+elif selected_page == "Contact":
+    st.title("Contact")
+    st.write("For support, please email support@example.com.")
 
 
 # Function to add a contact to the database
